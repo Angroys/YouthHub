@@ -1,0 +1,680 @@
+<!--allrecords--><div id="allrecords" data-tilda-export="yes" class="t-records" data-hook="blocks-collection-content-node" data-tilda-project-id="8923935" data-tilda-page-id="45949757" data-tilda-page-alias="principal/ru" data-tilda-formskey="26008888b222d45349e93f66f8923935" data-tilda-cookie="no" data-tilda-lazy="yes" data-tilda-project-headcode="yes" data-tilda-ts="y"><div id="rec724314174" class="r t-rec" style="background-color:#000000; " data-animationappear="off" data-record-type="257" data-bg-color="#000000"><!-- T228 --><div id="nav724314174marker"></div><div class="tmenu-mobile" ><div class="tmenu-mobile__container"><div class="tmenu-mobile__burgerlogo"><div class="tmenu-mobile__burgerlogo__title t-title" field="title"><div style="font-size: 22px;" data-customstyle="yes"><a href="https://foraqua.md/">Foraqua</a></div></div></div><button type="button" 
+class="t-menuburger t-menuburger_first " 
+aria-label="Navigation menu" 
+aria-expanded="false"><span style="background-color:#fff;"></span><span style="background-color:#fff;"></span><span style="background-color:#fff;"></span><span style="background-color:#fff;"></span></button><script>function t_menuburger_init(recid) {
+var rec = document.querySelector('#rec' + recid);
+if (!rec) return;
+var burger = rec.querySelector('.t-menuburger');
+if (!burger) return;
+var isSecondStyle = burger.classList.contains('t-menuburger_second');
+if (isSecondStyle && !window.isMobile && !('ontouchend' in document)) {
+burger.addEventListener('mouseenter', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-unhovered');
+burger.classList.add('t-menuburger-hovered');
+});
+burger.addEventListener('mouseleave', function() {
+if (burger.classList.contains('t-menuburger-opened')) return;
+burger.classList.remove('t-menuburger-hovered');
+burger.classList.add('t-menuburger-unhovered');
+setTimeout(function() {
+burger.classList.remove('t-menuburger-unhovered');
+}, 300);
+});
+}
+burger.addEventListener('click', function() {
+if (!burger.closest('.tmenu-mobile') &&
+!burger.closest('.t450__burger_container') &&
+!burger.closest('.t466__container') &&
+!burger.closest('.t204__burger') &&
+!burger.closest('.t199__js__menu-toggler')) {
+burger.classList.toggle('t-menuburger-opened');
+burger.classList.remove('t-menuburger-unhovered');
+}
+});
+var menu = rec.querySelector('[data-menu="yes"]');
+if (!menu) return;
+var menuLinks = menu.querySelectorAll('.t-menu__link-item');
+var submenuClassList = ['t978__menu-link_hook', 't978__tm-link', 't966__tm-link', 't794__tm-link', 't-menusub__target-link'];
+Array.prototype.forEach.call(menuLinks, function (link) {
+link.addEventListener('click', function () {
+var isSubmenuHook = submenuClassList.some(function (submenuClass) {
+return link.classList.contains(submenuClass);
+});
+if (isSubmenuHook) return;
+burger.classList.remove('t-menuburger-opened');
+});
+});
+menu.addEventListener('clickedAnchorInTooltipMenu', function () {
+burger.classList.remove('t-menuburger-opened');
+});
+}
+t_onReady(function() {
+t_onFuncLoad('t_menuburger_init', function(){t_menuburger_init('724314174');});
+});</script><style>.t-menuburger {
+position: relative;
+flex-shrink: 0;
+width: 28px;
+height: 20px;
+padding: 0;
+border: none;
+background-color: transparent;
+outline: none;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: transform .5s ease-in-out;
+cursor: pointer;
+z-index: 999;
+}
+/*---menu burger lines---*/
+.t-menuburger span {
+display: block;
+position: absolute;
+width: 100%;
+opacity: 1;
+left: 0;
+-webkit-transform: rotate(0deg);
+transform: rotate(0deg);
+transition: .25s ease-in-out;
+height: 3px;
+background-color: #000;
+}
+.t-menuburger span:nth-child(1) {
+top: 0px;
+}
+.t-menuburger span:nth-child(2),
+.t-menuburger span:nth-child(3) {
+top: 8px;
+}
+.t-menuburger span:nth-child(4) {
+top: 16px;
+}
+/*menu burger big*/
+.t-menuburger__big {
+width: 42px;
+height: 32px;
+}
+.t-menuburger__big span {
+height: 5px;
+}
+.t-menuburger__big span:nth-child(2),
+.t-menuburger__big span:nth-child(3) {
+top: 13px;
+}
+.t-menuburger__big span:nth-child(4) {
+top: 26px;
+}
+/*menu burger small*/
+.t-menuburger__small {
+width: 22px;
+height: 14px;
+}
+.t-menuburger__small span {
+height: 2px;
+}
+.t-menuburger__small span:nth-child(2),
+.t-menuburger__small span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger__small span:nth-child(4) {
+top: 12px;
+}
+/*menu burger opened*/
+.t-menuburger-opened span:nth-child(1) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+.t-menuburger-opened span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+.t-menuburger-opened span:nth-child(4) {
+top: 8px;
+width: 0%;
+left: 50%;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(1) {
+top: 6px;
+}
+.t-menuburger-opened.t-menuburger__big span:nth-child(4) {
+top: 18px;
+}
+.t-menuburger-opened.t-menuburger__small span:nth-child(1),
+.t-menuburger-opened.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+/*---menu burger first style---*/
+@media (hover), (min-width:0\0) {
+.t-menuburger_first:hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_first:hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_first.t-menuburger__big:hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+/*---menu burger second style---*/
+.t-menuburger_second span:nth-child(2),
+.t-menuburger_second span:nth-child(3) {
+width: 80%;
+left: 20%;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_second.t-menuburger-hovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-hovered span:nth-child(3) {
+animation: t-menuburger-anim 0.3s ease-out normal forwards;
+}
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(2),
+.t-menuburger_second.t-menuburger-unhovered span:nth-child(3) {
+animation: t-menuburger-anim2 0.3s ease-out normal forwards;
+}
+}
+.t-menuburger_second.t-menuburger-opened span:nth-child(2),
+.t-menuburger_second.t-menuburger-opened span:nth-child(3){
+left: 0;
+right: 0;
+width: 100%!important;
+}
+/*---menu burger third style---*/
+.t-menuburger_third span:nth-child(4) {
+width: 70%;
+left: unset;
+right: 0;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_third:not(.t-menuburger-opened):hover span:nth-child(4) {
+width: 100%;
+}
+}
+.t-menuburger_third.t-menuburger-opened span:nth-child(4) {
+width: 0!important;
+right: 50%;
+}
+/*---menu burger fourth style---*/
+.t-menuburger_fourth {
+height: 12px;
+}
+.t-menuburger_fourth.t-menuburger__small {
+height: 8px;
+}
+.t-menuburger_fourth.t-menuburger__big {
+height: 18px;
+}
+.t-menuburger_fourth span:nth-child(2),
+.t-menuburger_fourth span:nth-child(3) {
+top: 4px;
+opacity: 0;
+}
+.t-menuburger_fourth span:nth-child(4) {
+top: 8px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__small span:nth-child(3) {
+top: 3px;
+}
+.t-menuburger_fourth.t-menuburger__small span:nth-child(4) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(2),
+.t-menuburger_fourth.t-menuburger__big span:nth-child(3) {
+top: 6px;
+}
+.t-menuburger_fourth.t-menuburger__big span:nth-child(4) {
+top: 12px;
+}
+@media (hover), (min-width:0\0) {
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(1px);
+}
+.t-menuburger_fourth:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-1px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(1) {
+transform: translateY(3px);
+}
+.t-menuburger_fourth.t-menuburger__big:not(.t-menuburger-opened):hover span:nth-child(4) {
+transform: translateY(-3px);
+}
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(1),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(4) {
+top: 4px;
+}
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(2),
+.t-menuburger_fourth.t-menuburger-opened span:nth-child(3) {
+opacity: 1;
+}
+/*---menu burger animations---*/
+@keyframes t-menuburger-anim {
+0% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+50% {
+width: 100%;
+left: 0;
+right: 0;
+}
+100% {
+width: 80%;
+left: 0;
+right: 20%;
+}
+}
+@keyframes t-menuburger-anim2 {
+0% {
+width: 80%;
+left: 0;
+}
+50% {
+width: 100%;
+right: 0;
+left: 0;
+}
+100% {
+width: 80%;
+left: 20%;
+right: 0;
+}
+}</style> </div></div><style>.tmenu-mobile {
+background-color: #111;
+display: none;
+width: 100%;
+top: 0;
+z-index: 990;
+}
+.tmenu-mobile_positionfixed {
+position: fixed;
+}
+.tmenu-mobile__text {
+color: #fff;
+}
+.tmenu-mobile__container {
+min-height: 64px;
+padding: 20px;
+position: relative;
+box-sizing: border-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-justify-content: space-between;
+-ms-flex-pack: justify;
+justify-content: space-between;
+}
+.tmenu-mobile__list {
+display: block;
+}
+.tmenu-mobile__burgerlogo {
+display: inline-block;
+font-size: 24px;
+font-weight: 400;
+white-space: nowrap;
+vertical-align: middle;
+}
+.tmenu-mobile__imglogo {
+height: auto;
+display: block;
+max-width: 300px!important;
+box-sizing: border-box;
+padding: 0;
+margin: 0 auto;
+}
+@media screen and (max-width: 980px) {
+.tmenu-mobile__menucontent_hidden {
+display: none;
+height: 100%;
+}
+.tmenu-mobile {
+display: block;
+}
+}
+@media screen and (max-width: 980px) {
+#rec724314174 .t-menuburger {
+-webkit-order: 1;
+-ms-flex-order: 1;
+order: 1;
+}
+}</style><style> #rec724314174 .tmenu-mobile__burgerlogo a { font-size: 30px; color: #ffffff; text-transform: uppercase; letter-spacing: 2.5px; }</style><style> #rec724314174 .tmenu-mobile__burgerlogo__title { color: #ffffff; text-transform: uppercase; letter-spacing: 2.5px; } @media screen and (min-width: 480px) { #rec724314174 .tmenu-mobile__burgerlogo__title { font-size: 30px; } }</style><div id="nav724314174" class="t228 t228__positionfixed tmenu-mobile__menucontent_hidden" style="background-color: rgba(67,90,147,0.0); height:90px; " data-bgcolor-hex="#435a93" data-bgcolor-rgba="rgba(67,90,147,0.0)" data-navmarker="nav724314174marker" data-appearoffset="" data-bgopacity-two="100" data-menushadow="" data-menushadow-css="0px 1px 3px rgba(0,0,0,0.3)" data-bgopacity="0.0" data-bgcolor-rgba-afterscroll="rgba(67,90,147,1)" data-menu-items-align="center" data-menu="yes"><div class="t228__maincontainer t228__c12collumns" style="height:90px;"><div class="t228__padding40px"></div><div class="t228__leftside"><div class="t228__leftcontainer"><div class="t228__logo t-title" field="title"><div style="font-size: 22px;" data-customstyle="yes"><a href="https://foraqua.md/">Foraqua</a></div></div></div></div><div class="t228__centerside "><nav class="t228__centercontainer"><ul role="list" class="t228__list t-menu__list t228__list_hidden"><li class="t228__list_item" 
+style="padding:0 15px 0 0;"><a class="t-menu__link-item" 
+href="/servicii/ru" data-menu-submenu-hook="" data-menu-item-number="1"
+>Услуги</a></li><li class="t228__list_item" 
+style="padding:0 15px;"><a class="t-menu__link-item" 
+href="/galerie/ru" data-menu-submenu-hook="" data-menu-item-number="2"
+>Галерея</a></li><li class="t228__list_item" 
+style="padding:0 15px;"><a class="t-menu__link-item" 
+href="/desprenoi/ru" data-menu-submenu-hook="" data-menu-item-number="3"
+>О нас</a></li><li class="t228__list_item" 
+style="padding:0 0 0 15px;"><a class="t-menu__link-item" 
+href="/contacte/ru" data-menu-submenu-hook="" data-menu-item-number="4"
+>Контакты</a></li></ul></nav></div><div class="t228__rightside"><div class="t228__rightcontainer"><div class="t228__right_descr"><div style="font-size: 16px;" data-customstyle="yes"><a href="Tel:+(373)60121205" style="color: rgb(255, 255, 255);">Telefon: +(373)60121205</a><br /><span style="color: rgb(255, 255, 255);">Email: </span><a href="mailto:racovita1980@gmail.com" style="color: rgb(255, 255, 255);">racovita1980@gmail.com</a></div></div><div class="t228__right_langs"><div class="t228__right_buttons_wrap"><div class="t228__right_langs_lang"><a style="" href="http://foraqua.md/">Ro</a></div><div class="t228__right_langs_lang"><a style="" href="http://foraqua.md/principal/ru">Ru</a></div></div></div></div></div><div class="t228__padding40px"></div></div></div><style>@media screen and (max-width: 980px) {
+#rec724314174 .t228__leftcontainer{
+display: none;
+}
+}</style><style>@media screen and (max-width: 980px) {
+#rec724314174 .t228 {
+position: static;
+}
+}</style><script>window.addEventListener('load', function () {
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('724314174');
+});
+});
+window.addEventListener('resize', t_throttle(function () {
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('724314174');
+});
+t_onFuncLoad('t_menu__setBGcolor', function () {
+t_menu__setBGcolor('724314174', '.t228');
+});
+}));
+t_onReady(function () {
+t_onFuncLoad('t_menu__highlightActiveLinks', function () {
+t_menu__highlightActiveLinks('.t228__list_item a');
+});
+t_onFuncLoad('t_menu__findAnchorLinks', function () {
+t_menu__findAnchorLinks('724314174', '.t228__list_item a');
+});
+t_onFuncLoad('t228__init', function () {
+t228__init('724314174');
+});
+t_onFuncLoad('t_menu__setBGcolor', function () {
+t_menu__setBGcolor('724314174', '.t228');
+});
+t_onFuncLoad('t_menu__interactFromKeyboard', function () {
+t_menu__interactFromKeyboard('724314174');
+});
+t_onFuncLoad('t228_setWidth', function () {
+t228_setWidth('724314174');
+});
+t_onFuncLoad('t_menu__changeBgOpacity', function () {
+t_menu__changeBgOpacity('724314174', '.t228');
+window.addEventListener('scroll', t_throttle(function () {
+t_menu__changeBgOpacity('724314174', '.t228');
+}));
+});
+t_onFuncLoad('t_menu__createMobileMenu', function () {
+t_menu__createMobileMenu('724314174', '.t228');
+});
+});</script><!--[if IE 8]><style>#rec724314174 .t228 {
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#D9435a93', endColorstr='#D9435a93');
+}</style><![endif]--><style>#rec724314174 .t-menu__link-item{
+-webkit-transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+position: relative;
+}
+#rec724314174 .t-menu__link-item:not(.t-active):not(.tooltipstered)::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: 20%;
+opacity: 0;
+width: 100%;
+height: 100%;
+border-bottom: 0px solid #66ec66;
+-webkit-box-shadow: inset 0px -1px 0px 0px #66ec66;
+-moz-box-shadow: inset 0px -1px 0px 0px #66ec66;
+box-shadow: inset 0px -1px 0px 0px #66ec66;
+-webkit-transition: all 0.3s ease;
+transition: all 0.3s ease;
+pointer-events: none;
+}
+#rec724314174 .t-menu__link-item.t-active:not(.t978__menu-link){
+opacity:1 !important;}
+#rec724314174 .t-menu__link-item:not(.t-active):not(.tooltipstered):hover {
+color: #66ec66 !important; opacity: 1 !important;}
+#rec724314174 .t-menu__link-item:not(.t-active):not(.tooltipstered):focus-visible{
+color: #66ec66 !important; opacity: 1 !important;}
+#rec724314174 .t-menu__link-item:not(.t-active):not(.tooltipstered):hover::after {
+opacity: 1;
+bottom: -0px; }
+#rec724314174 .t-menu__link-item:not(.t-active):not(.tooltipstered):focus-visible::after{
+opacity: 1;
+bottom: -0px; }
+@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+{
+#rec724314174 .t-menu__link-item,
+#rec724314174 .t-menu__link-item.t-active {
+opacity: 1 !important;
+}
+}</style><style> #rec724314174 .t228__leftcontainer a { font-size: 30px; color: #ffffff; text-transform: uppercase; letter-spacing: 2.5px; } #rec724314174 a.t-menu__link-item { font-size: 15px; color: #ffffff; font-weight: 500; } #rec724314174 .t228__right_langs_lang a { font-size: 15px; color: #ffffff; font-weight: 500; } #rec724314174 .t228__right_descr { font-size: 18px; color: #ffffff; }</style><style> #rec724314174 .t228__logo { color: #ffffff; text-transform: uppercase; letter-spacing: 2.5px; } @media screen and (min-width: 480px) { #rec724314174 .t228__logo { font-size: 30px; } }</style></div><div id="rec724314175" class="r t-rec t-rec_pt_0 t-rec_pb_0" style="padding-top:0px;padding-bottom:0px; " data-animationappear="off" data-record-type="18" ><!-- cover --><div class="t-cover" id="recorddiv724314175"bgimgfield="img"style="height:90vh;background-image:url('images/tild6637-6363-4436-a132-663535323734__-__resize__20x__foraj-puturi-apa.jpeg');"><div class="t-cover__carrier" id="coverCarry724314175"data-content-cover-id="724314175"data-content-cover-bg="images/tild6637-6363-4436-a132-663535323734__foraj-puturi-apa.jpeg"data-display-changed="true"data-content-cover-height="90vh"data-content-cover-parallax="fixed"style="height:90vh; "itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6637-6363-4436-a132-663535323734__foraj-puturi-apa.jpeg"></div><div class="t-cover__filter" style="height:90vh;background-image: -moz-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.50));background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.50));background-image: -o-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.50));background-image: -ms-linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.50));background-image: linear-gradient(top, rgba(0,0,0,0.30), rgba(0,0,0,0.50));filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#b2000000', endColorstr='#7f000000');"></div><div class="t-container"><div class="t-col t-col_12 "><div class="t-cover__wrapper t-valign_middle" style="height:90vh;"><div class="t001 t-align_center"><div class="t001__wrapper" data-hook-content="covercontent"><div class="t001__title t-title t-title_xl t-animate" data-animate-style="fadeinup" data-animate-group="yes" field="title"><div style="font-size: 92px;" data-customstyle="yes"><strong style="font-weight: 800; color: rgb(40, 142, 186);">FORAQUA</strong></div></div><div class="t001__descr t-descr t-descr_xl t001__descr_center t-animate" data-animate-style="fadeinup" data-animate-group="yes" field="descr"><div style="font-size: 28px;" data-customstyle="yes"><span style="font-family: Orelega;">Бурение водяные скважины.</span><br /><span style="font-family: Orelega;">Бурение скважин для геотермального отопления.</span></div></div><span class="space"></span></div></div></div></div></div><!-- arrow --><div class="t-cover__arrow"><div class="t-cover__arrow-wrapper t-cover__arrow-wrapper_animated"><div class="t-cover__arrow_mobile"><svg role="presentation" class="t-cover__arrow-svg" style="fill:#ffffff;" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592" style="enable-background:new 0 0 38.417 18.592;"><g><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"/></g></svg></div></div></div><!-- arrow --></div><style> #rec724314175 .t001__uptitle { text-transform: uppercase; } #rec724314175 .t001__title { font-weight: 700; } @media screen and (min-width: 900px) { #rec724314175 .t001__title { font-size: 58px; } }</style></div><div id="rec724314176" class="r t-rec t-rec_pt_120 t-rec_pb_120" style="padding-top:120px;padding-bottom:120px;background-color:#eff4f7; " data-record-type="474" data-bg-color="#eff4f7"><!-- T474 --><div class="t474"><div class="t-container t-align_center"><div class="t-col t-col_10 t-prefix_1"> <div class="t474__descr t-descr t-descr_xxxl t-margin_auto t-animate" data-animate-style="fadein" data-animate-group="yes" field="descr"><span style="font-family: Orelega; color: rgb(139, 69, 19);">Откройте для себя разнообразие и красоту наших прошлых проектов в нашем портфолио.</span></div> </div></div></div></div><div id="rec724314177" class="r t-rec t-rec_pt_105 t-rec_pb_90" style="padding-top:105px;padding-bottom:90px; " data-record-type="469" ><!-- t469 --><div class="t469"><div class="t-container t-align_left"><div class="t-col t-col_8 t-prefix_2"><h1 class="t469__title t-title t-title_lg t-animate" data-animate-style="fadeinright" data-animate-group="yes" field="title"><div style="font-size: 42px;" data-customstyle="yes"><span style="font-family: Orelega; color: rgb(0, 0, 93);">О нас</span></div></h1> <div class="t469__line " style="background-color: #288eba; "></div> <div class="t469__descr t-descr t-descr_md t-animate" data-animate-style="fadeinup" data-animate-group="yes" field="descr"><span style="font-family: Orelega; color: rgb(139, 69, 19);">Мы преданная своему делу и увлеченная команда, специализирующаяся в бурение водяных скважин и геотермальном отоплении. Имея богатую историю предоставления инновационных и устойчивых решений, мы стремимся привнести эстетику и функциональность в каждый проект. Благодаря опытной команде и клиентоориентированному подходу мы гарантируем, что с нами вы в надежных руках.</span></div> </div></div></div></div><div id="rec724314179" class="r t-rec t-rec_pt_150 t-rec_pb_150" style="padding-top:150px;padding-bottom:150px;background-color:#eff4f7; " data-record-type="502" data-bg-color="#eff4f7"><!-- t502 --><div class="t502"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><h1 class="t-section__title t-title t-title_xs t-animate" data-animate-style="fadeindown" data-animate-group="yes" field="btitle"><div style="font-size: 42px;" data-customstyle="yes"><span style="color: rgb(0, 0, 93); font-family: Orelega;">Наши Cервисы</span></div></h1> <div class="t-section__descr t-descr t-descr_xl t-margin_auto t-animate" data-animate-style="fadein" data-animate-group="yes" field="bdescr"><span style="font-family: Orelega; color: rgb(139, 69, 19);">Для получения более подробной информации об услугах позвоните нам.</span></div> </div></div></div><ul role="list" class="t502__container t-list__container_inrow3 t-container"><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">1</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976310929">Индивидуальный дизайн</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976310929">Мы подходим к каждому проекту с вниманием к потребностям и предпочтениям клиента, предлагая индивидуальные и инновационные дизайнерские решения.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">2</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976315081">Профессиональное строительство</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976315081">Наша команда экспертов выполняет каждое бурение с большим вниманием к деталям и высочайшим качеством работы.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">3</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976330452">Эффективная установка и интеграция</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976330452">Мы гарантируем, что все оборудование и системы правильно установлены и интегрированы, обеспечивая оптимальную и надежную работу каждой работы.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">4</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976334035">Строгое тестирование и проверка</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976334035">Мы уделяем особое внимание тщательному тестированию и проверке каждого аспекта нашей работы, гарантируя, что все работает с оптимальными параметрами и всегда соблюдаются стандарты качества.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">5</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976688514">Доверительные отношения с клиентом</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976688514">Мы стремимся развивать и поддерживать доверительные отношения с нашими клиентами, оказывая постоянную помощь и поддержку для обеспечения полного удовлетворения их потребностей.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">6</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1476976692541">Креативные и персонализированные решения</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1476976692541">Мы подходим к каждому проекту творчески и с вниманием к деталям, предлагая индивидуальные решения, которые идеально соответствуют вашим потребностям и предпочтениям.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">7</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1711624489899">Профессиональная экспертиза</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1711624489899">Наша команда состоит из специалистов с опытом работы в области бурения скважин для воды и геотермальных источников, обеспечивая профессиональный подход и техническую компетентность в каждом проекте.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">8</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1711624552282">Гарантия</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1711624552282">Наша команда состоит из специалистов с обширным опытом в области бурения скважин для воды и геотермальных источников, что позволяет нам предлагать профессиональный подход и надежную техническую компетенцию на каждом этапе проекта.</div></div></div></li><li class="t502__col t-col t-col_4 t-list__item t-align_left t-item t-animate" data-animate-style="fadein" data-animate-chain="yes" ><div class="t502__tablewrapper"><div class="t502__circlewrapper"><div class="t502__circle t-title" style="background-color:#288eba; color:#ffffff;">9</div></div><div class="t502__textwrapper"><h2 class="t502__title t-name t-name_sm" " field="li_title__1711624588219">Выгодная цена</h2><div class="t502__blockdescr t-descr t-descr_xs" field="li_descr__1711624588219">Мы обязуемся предоставлять качественные услуги по конкурентоспособным ценам. Мы посвящены поиску эффективных и экономически выгодных решений для ваших потребностей, обеспечивая отличное соотношение цены и качества в каждом проекте.</div></div></div></li></ul></div><style> #rec724314179 .t502__title { font-size: 16px; color: #008000; font-weight: 700; } #rec724314179 .t502__blockdescr { font-size: 14px; color: #8b4513; font-weight: 400; }</style></div><div id="rec724314180" class="r t-rec t-rec_pt_150 t-rec_pb_105" style="padding-top:150px;padding-bottom:105px; " data-record-type="509" ><!-- t509 --><div class="t509"><div class="t-section__container t-container"><div class="t-col t-col_12"><div class="t-section__topwrapper t-align_center"><h2 class="t-section__title t-title t-title_xs t-animate" data-animate-style="fadeindown" data-animate-group="yes" field="btitle"><div style="font-size: 42px;" data-customstyle="yes"><span style="font-family: Orelega; color: rgb(0, 0, 93);">Преимущества Наших Услуг</span></div></h2> <div class="t-section__descr t-descr t-descr_xl t-margin_auto t-animate" data-animate-style="fadein" data-animate-group="yes" field="bdescr"><span style="font-family: Orelega; color: rgb(139, 69, 19);">Мы прилагаем все усилия каждый день, чтобы сделать жизнь наших клиентов лучше и счастливее</span></div> </div></div></div><div class="t-card__container t-container"><div class="t509__colwrapper t-col t-col_10 t-prefix_1"><div class="t-item t-animate" data-animate-style="fadein" data-animate-chain="yes"><div class="t509__col t-col t-col_5 t509__mobileimg" itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6365-3430-4466-b936-653634333433__-__resizeb__20x__vecteezy_drilling-ri.jpg"><div class="t509__blockimg t-bgimg" data-original="images/tild6365-3430-4466-b936-653634333433__vecteezy_drilling-ri.jpg" 
+bgimgfield="li_img__9892100789100" data-image-width="460" data-image-height="340px" 
+style="background-image:url('images/tild6365-3430-4466-b936-653634333433__-__resizeb__20x__vecteezy_drilling-ri.jpg');"
+></div></div><div class="t509__col t-col t-col_5 t509__leftcol"><div class="t509__textwrapper t-align_left" style="max-width:400px;"><div class="t509__content t-valign_middle"><div class="t509__box"><div 
+class="t-card__title t-heading t-heading_xs" 
+id="cardtitle1_724314180" 
+field="li_title__9892100789100" 
+><span style="color: rgb(0, 128, 0); font-family: Orelega;">Преимущества водяных скважин</span></div><div class="t-card__descr t-descr t-descr_sm" field="li_descr__9892100789100" ><span style="font-family: Orelega; color: rgb(139, 69, 19);">Водяные скважины обеспечивают доступ к чистым и надежным источникам подземных вод, обеспечивая постоянную подачу и снижая зависимость от поверхностных источников, что приносит вам пользу.</span></div><a href="https://foraqua.md/plusuri" class="t-card__link"><div 
+class="t-card__btn t-btn t-btn_sm" 
+id="cardbtn1_724314180" data-field="li_buttontitle"
+style="color:#ffffff;background-color:#008000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;" data-buttonfieldset="li_button" data-lid="9892100789100"
+aria-labelledby="cardtitle1_724314180 cardbtn1_724314180" >Читать далее</div></a></div></div></div></div><div class="t509__col t-col t-col_5 t509__rightcol t509__desktopimg"><div class="t509__imgwrapper" style="" itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6365-3430-4466-b936-653634333433__-__resizeb__20x__vecteezy_drilling-ri.jpg"><div class="t509__blockimg t-bgimg" data-original="images/tild6365-3430-4466-b936-653634333433__vecteezy_drilling-ri.jpg" 
+bgimgfield="li_img__9892100789100" data-image-width="460" data-image-height="340px" 
+style="background-image:url('images/tild6365-3430-4466-b936-653634333433__-__resizeb__20x__vecteezy_drilling-ri.jpg');"
+></div></div></div></div><div class="t509__separator t-clear" style=""></div><div class="t-item t-animate" data-animate-style="fadein" data-animate-chain="yes"><div class="t509__col t-col t-col_5 t509__mobileimg" itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6538-3239-4136-a333-663438333765__-__resizeb__20x__screenshot_2024-03-1.png"><div class="t509__blockimg t-bgimg" data-original="images/tild6538-3239-4136-a333-663438333765__screenshot_2024-03-1.png" 
+bgimgfield="li_img__9892100789101" data-image-width="460" data-image-height="340px" 
+style="background-image:url('images/tild6538-3239-4136-a333-663438333765__-__resizeb__20x__screenshot_2024-03-1.png');"
+></div></div><div class="t509__col t-col t-col_5 t509__leftcol t509__desktopimg"><div class="t509__imgwrapper" style="" itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6538-3239-4136-a333-663438333765__-__resizeb__20x__screenshot_2024-03-1.png"><div class="t509__blockimg t-bgimg" data-original="images/tild6538-3239-4136-a333-663438333765__screenshot_2024-03-1.png" 
+bgimgfield="li_img__9892100789101" data-image-width="460" data-image-height="340px" 
+style="background-image:url('images/tild6538-3239-4136-a333-663438333765__-__resizeb__20x__screenshot_2024-03-1.png');"
+></div></div></div><div class="t509__col t-col t-col_5 t509__rightcol"><div class="t509__textwrapper t-align_left" style="max-width:400px;"><div class="t509__content t-valign_middle"><div class="t509__box"><div 
+class="t-card__title t-heading t-heading_xs" 
+id="cardtitle2_724314180" 
+field="li_title__9892100789101" 
+><span style="font-family: Orelega; color: rgb(0, 128, 0);">Преимущества геотермального отопления</span></div><div class="t-card__descr t-descr t-descr_sm" field="li_descr__9892100789101" ><span style="font-family: Orelega; color: rgb(139, 69, 19);">Преимуществами геотермального отопления являются существенная экономия на счетах за электроэнергию, положительное воздействие на окружающую среду, долговечность системы и постоянный и равномерный тепловой комфорт внутри домов и зданий.</span></div><a href="https://foraqua.md/plusurig" class="t-card__link"><div 
+class="t-card__btn t-btn t-btn_sm" 
+id="cardbtn2_724314180" data-field="li_buttontitle"
+style="color:#ffffff;background-color:#008000;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;" data-buttonfieldset="li_button" data-lid="9892100789101"
+aria-labelledby="cardtitle2_724314180 cardbtn2_724314180" >Читать далее</div></a></div></div></div></div></div></div></div></div><script>t_onReady(function () {
+t_onFuncLoad('t509_setHeight', function () {
+window.addEventListener('resize', t_throttle(function () {
+t509_setHeight('724314180');
+}));
+t509_setHeight('724314180');
+var rec = document.querySelector('#rec724314180');
+if (!rec) return;
+var wrapper = rec.querySelector('.t509');
+if (wrapper) {
+wrapper.addEventListener('displayChanged', function () {
+t509_setHeight('724314180');
+});
+}
+});
+});</script></div><div id="rec724314181" class="r t-rec t-rec_pt_45 t-rec_pb_0" style="padding-top:45px;padding-bottom:0px;background-color:#eff4f7; " data-record-type="795" data-bg-color="#eff4f7"><!-- T795 --><div class="t795"><div class="t-container t-align_center"><div class="t-col t-col_10 t-prefix_1"><div class="t795__title t-title t-title_xs t-margin_auto" field="title"><div style="font-size: 42px;" data-customstyle="yes"><span style="font-family: Orelega; color: rgb(0, 0, 93); font-weight: 600;">Галерея</span></div></div> </div></div></div></div><div id="rec724314182" class="r t-rec t-rec_pt_30 t-rec_pb_15" style="padding-top:30px;padding-bottom:15px;background-color:#eff4f7; " data-animationappear="off" data-record-type="816" data-bg-color="#eff4f7"><!-- t816 --><!-- @classes: t-descr t-descr_xxs --> <div class="t816"><div class="t816__container t-container "><div class="t816__row t816__row_indent-20px t-row"><div class="t816__tile t816__tile_left "
+itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6464-3436-4238-a164-376465643335__screenshot_2024-03-1.png"><div class="t816__bgimg t816__bgimg_3-4 t-bgimg" data-original="images/tild6464-3436-4238-a164-376465643335__screenshot_2024-03-1.png"
+bgimgfield="gi_img__0" data-zoomable="yes" data-zoom-target="0" data-img-zoom-url="images/tild6464-3436-4238-a164-376465643335__screenshot_2024-03-1.png" 
+style="background: url('images/tild6464-3436-4238-a164-376465643335__-__resizeb__20x__screenshot_2024-03-1.png') center center no-repeat;background-size: cover;"
+></div></div><div class="t816__tile t816__tile_right t816__tile_offset"
+itemscope itemtype="http://schema.org/ImageObject"><meta itemprop="image" content="images/tild6566-3531-4232-a365-646665353366__screenshot_2024-03-1.png"><div class="t816__bgimg t816__bgimg_3-4 t-bgimg" data-original="images/tild6566-3531-4232-a365-646665353366__screenshot_2024-03-1.png" 
+bgimgfield="gi_img__1" data-zoomable="yes" data-zoom-target="1" data-img-zoom-url="images/tild6566-3531-4232-a365-646665353366__screenshot_2024-03-1.png" 
+style="background: url('images/tild6566-3531-4232-a365-646665353366__-__resizeb__20x__screenshot_2024-03-1.png') center center no-repeat;background-size: cover;"
+></div></div></div></div></div><script type="text/javascript">t_onReady(function() {
+t_onFuncLoad('t816_init', function() {
+t816_init('724314182', '20');
+});
+});</script></div><div id="rec724314183" class="r t-rec t-rec_pt_45 t-rec_pb_30" style="padding-top:45px;padding-bottom:30px;background-color:#eff4f7; " data-record-type="191" data-bg-color="#eff4f7"><!-- T142 --><div class="t142"><div class="t-container_100"><div class="t142__wrapone"><div class="t142__wraptwo"><a class="t-btn t142__submit t-btn_md"
+href="https://foraqua.md/galerie" target="" 
+style="color:#288eba;border:3px solid #288eba;" data-buttonfieldset="button"
+><span class="t142__text">Узнать больше</span></a></div></div></div></div><script>t_onReady(function () {
+t_onFuncLoad('t142_checkSize', function () {
+t142_checkSize('724314183');
+});
+});
+window.addEventListener('load', function () {
+t_onFuncLoad('t142_checkSize', function () {
+t142_checkSize('724314183');
+});
+});</script></div><div id="rec724314184" class="r t-rec t-rec_pt_75 t-rec_pb_75" style="padding-top:75px;padding-bottom:75px;background-color:#ffffff; " data-record-type="30" data-bg-color="#ffffff"><!-- T015 --><div class="t015"><div class="t-container t-align_center"><div class="t-col t-col_6 t-prefix_3"><div class="t015__title t-title t-title_lg" field="title"><div style="font-size: 42px;" data-customstyle="yes"><span style="color: rgb(0, 0, 93); font-family: Orelega; font-weight: 600;">Этапы Работы</span></div></div> <div class="t015__descr t-descr t-descr_xl" field="descr"><span style="color: rgb(139, 69, 19); font-family: Orelega;">Посмотреть, как идут буровые работы</span></div> </div></div></div><style> #rec724314184 .t015__uptitle { text-transform: uppercase; } #rec724314184 .t015__title { font-weight: 500; } @media screen and (min-width: 900px) { #rec724314184 .t015__title { font-size: 42px; } }</style></div><div id="rec724314185" class="r t-rec t-rec_pt_90 t-rec_pb_90" style="padding-top:90px;padding-bottom:90px; " data-animationappear="off" data-record-type="604" ><!-- t604 --><div class="t604"><div class="t-slds" style="visibility: hidden;"><div class="t-container t-slds__main"><ul class="t-slds__arrow_container t-slds__arrow-nearpic"><li class="t-slds__arrow_wrapper t-slds__arrow_wrapper-left" data-slide-direction="left"><button 
+type="button" 
+class="t-slds__arrow t-slds__arrow-left t-slds__arrow-withbg" 
+aria-controls="carousel_724314185" 
+aria-disabled="false" 
+aria-label="Previous slide"
+style="width: 40px; height: 40px;background-color: rgba(232,232,232,1);"><div class="t-slds__arrow_body t-slds__arrow_body-left" style="width: 9px;"><svg role="presentation" focusable="false" style="display: block" viewBox="0 0 9.3 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polyline
+fill="none" 
+stroke="#000000"
+stroke-linejoin="butt" 
+stroke-linecap="butt"
+stroke-width="1" 
+points="0.5,0.5 8.5,8.5 0.5,16.5" 
+/></svg></div></button></li><li class="t-slds__arrow_wrapper t-slds__arrow_wrapper-right" data-slide-direction="right"><button 
+type="button" 
+class="t-slds__arrow t-slds__arrow-right t-slds__arrow-withbg" 
+aria-controls="carousel_724314185" 
+aria-disabled="false" 
+aria-label="Next slide"
+style="width: 40px; height: 40px;background-color: rgba(232,232,232,1);"><div class="t-slds__arrow_body t-slds__arrow_body-right" style="width: 9px;"><svg role="presentation" focusable="false" style="display: block" viewBox="0 0 9.3 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polyline
+fill="none" 
+stroke="#000000"
+stroke-linejoin="butt" 
+stroke-linecap="butt"
+stroke-width="1" 
+points="0.5,0.5 8.5,8.5 0.5,16.5" 
+/></svg></div></button></li> </ul><div class="t-slds__container t-width t-width_10 t-margin_auto"><div class="t-slds__items-wrapper t-slds_animated-fast t-slds__witharrows" 
+id="carousel_724314185" data-slider-transition="300" data-slider-with-cycle="true" data-slider-correct-height="false" data-auto-correct-mobile-width="false" data-slider-arrows-nearpic="yes" 
+aria-roledescription="carousel" 
+aria-live="off"
+><div class="t-slds__item t-slds__item_active" data-slide-index="1" 
+role="group" 
+aria-roledescription="slide" 
+aria-hidden="false" 
+aria-label="1 of 4"
+><div class="t-width t-width_9 t-margin_auto" itemscope itemtype="http://schema.org/ImageObject"><div class="t-slds__wrapper t-align_center"><meta itemprop="image" content="images/tild3334-6231-4465-b364-326236373038__screenshot_2024-03-2.png"><meta itemprop="caption" content="Первая фаза"><div class="t604__imgwrapper" bgimgfield="gi_img__0"><div class="t-slds__bgimg t-bgimg" data-original="images/tild3334-6231-4465-b364-326236373038__screenshot_2024-03-2.png"
+style="background-image: url('images/tild3334-6231-4465-b364-326236373038__-__resizeb__20x__screenshot_2024-03-2.png');"
+></div><div class="t604__separator" data-slider-image-width="860" data-slider-image-height="550"></div></div></div></div></div><div class="t-slds__item" data-slide-index="2" 
+role="group" 
+aria-roledescription="slide" 
+aria-hidden="false" 
+aria-label="2 of 4"
+><div class="t-width t-width_9 t-margin_auto" itemscope itemtype="http://schema.org/ImageObject"><div class="t-slds__wrapper t-align_center"><meta itemprop="image" content="images/tild3839-3930-4231-b864-613530363434__vecteezy_cranes-on-t.jpg"><meta itemprop="caption" content="Второй этап"><div class="t604__imgwrapper" bgimgfield="gi_img__1"><div class="t-slds__bgimg t-bgimg" data-original="images/tild3839-3930-4231-b864-613530363434__vecteezy_cranes-on-t.jpg"
+style="background-image: url('images/tild3839-3930-4231-b864-613530363434__-__resizeb__20x__vecteezy_cranes-on-t.jpg');"
+></div><div class="t604__separator" data-slider-image-width="860" data-slider-image-height="550"></div></div></div></div></div><div class="t-slds__item" data-slide-index="3" 
+role="group" 
+aria-roledescription="slide" 
+aria-hidden="false" 
+aria-label="3 of 4"
+><div class="t-width t-width_9 t-margin_auto" itemscope itemtype="http://schema.org/ImageObject"><div class="t-slds__wrapper t-align_center"><meta itemprop="image" content="images/tild6637-3036-4730-b638-336234633637__viber_image_2024-03-.jpg"><meta itemprop="caption" content="Третий этап"><div class="t604__imgwrapper" bgimgfield="gi_img__2"><div class="t-slds__bgimg t-bgimg" data-original="images/tild6637-3036-4730-b638-336234633637__viber_image_2024-03-.jpg"
+style="background-image: url('images/tild6637-3036-4730-b638-336234633637__-__resizeb__20x__viber_image_2024-03-.jpg');"
+></div><div class="t604__separator" data-slider-image-width="860" data-slider-image-height="550"></div></div></div></div></div><div class="t-slds__item" data-slide-index="4" 
+role="group" 
+aria-roledescription="slide" 
+aria-hidden="false" 
+aria-label="4 of 4"
+><div class="t-width t-width_9 t-margin_auto" itemscope itemtype="http://schema.org/ImageObject"><div class="t-slds__wrapper t-align_center"><meta itemprop="image" content="images/tild3432-3661-4132-b832-373437363533__viber_image_2024-03-.jpg"><meta itemprop="caption" content="Четвертый этап"><div class="t604__imgwrapper" bgimgfield="gi_img__3"><div class="t-slds__bgimg t-bgimg" data-original="images/tild3432-3661-4132-b832-373437363533__viber_image_2024-03-.jpg"
+style="background-image: url('images/tild3432-3661-4132-b832-373437363533__-__resizeb__20x__viber_image_2024-03-.jpg');"
+></div><div class="t604__separator" data-slider-image-width="860" data-slider-image-height="550"></div></div></div></div></div></div></div><ul class="t-slds__bullet_wrapper"><li class="t-slds__bullet t-slds__bullet_active" data-slide-bullet-for="1"><button 
+type="button" 
+class="t-slds__bullet_body" 
+aria-label="Go to slide 1" 
+aria-current="true" 
+style="background-color: #c7c7c7;"></button></li><li class="t-slds__bullet " data-slide-bullet-for="2"><button 
+type="button" 
+class="t-slds__bullet_body" 
+aria-label="Go to slide 2" 
+style="background-color: #c7c7c7;"></button></li><li class="t-slds__bullet " data-slide-bullet-for="3"><button 
+type="button" 
+class="t-slds__bullet_body" 
+aria-label="Go to slide 3" 
+style="background-color: #c7c7c7;"></button></li><li class="t-slds__bullet " data-slide-bullet-for="4"><button 
+type="button" 
+class="t-slds__bullet_body" 
+aria-label="Go to slide 4" 
+style="background-color: #c7c7c7;"></button></li></ul><div class="t-slds__caption__container"><div class="t-slds__caption t-col t-col_8 t-prefix_2 t-slds__caption-active" data-slide-caption="1"><div class="t-slds__caption_wrapper t-align_left"
+style=""><div class="t-slds__title t-name t-name_xs" data-redactor-toolbar="no" field="gi_title__0">Первая фаза</div></div></div><div class="t-slds__caption t-col t-col_8 t-prefix_2 " data-slide-caption="2"><div class="t-slds__caption_wrapper t-align_left"
+style=""><div class="t-slds__title t-name t-name_xs" data-redactor-toolbar="no" field="gi_title__1">Второй этап</div></div></div><div class="t-slds__caption t-col t-col_8 t-prefix_2 " data-slide-caption="3"><div class="t-slds__caption_wrapper t-align_left"
+style=""><div class="t-slds__title t-name t-name_xs" data-redactor-toolbar="no" field="gi_title__2">Третий этап</div></div></div><div class="t-slds__caption t-col t-col_8 t-prefix_2 " data-slide-caption="4"><div class="t-slds__caption_wrapper t-align_left"
+style=""><div class="t-slds__title t-name t-name_xs" data-redactor-toolbar="no" field="gi_title__3">Четвертый этап</div></div></div></div></div></div></div><script>t_onReady(function() {
+t_onFuncLoad('t_sldsInit', function() {
+t_sldsInit('724314185');
+});
+t_onFuncLoad('t604_init', function () {
+t604_init('724314185');
+});
+t_onFuncLoad('t_slds_UpdateSliderHeight', function () {
+t_slds_UpdateSliderHeight('724314185');
+});
+t_onFuncLoad('t604__UpdateSliderArrowsHeight', function () {
+t604__UpdateSliderArrowsHeight('724314185');
+});
+});</script><style>#rec724314185 .t-slds__bullet_active .t-slds__bullet_body {
+background-color: #222 !important;
+}
+#rec724314185 .t-slds__bullet:hover .t-slds__bullet_body {
+background-color: #222 !important;
+}</style></div><div id="rec724314186" class="r t-rec t-rec_pt_75 t-rec_pb_75" style="padding-top:75px;padding-bottom:75px;background-color:#eff4f7; " data-record-type="30" data-bg-color="#eff4f7"><!-- T015 --><div class="t015"><div class="t-container t-align_center"><div class="t-col t-col_6 t-prefix_3"><div class="t015__title t-title t-title_lg" field="title"><div style="font-size: 42px;" data-customstyle="yes"><span style="color: rgb(0, 0, 93); font-family: Orelega; font-weight: 600;">Цены</span></div></div> <div class="t015__descr t-descr t-descr_xl" field="descr"><span style="font-family: Orelega; color: rgb(139, 69, 19);">Прайс-лист на наши услуги</span></div> </div></div></div><style> #rec724314186 .t015__uptitle { text-transform: uppercase; } #rec724314186 .t015__title { font-weight: 500; } @media screen and (min-width: 900px) { #rec724314186 .t015__title { font-size: 42px; } }</style></div><div id="rec724314187" class="r t-rec t-rec_pt_0 t-rec_pb_150" style="padding-top:0px;padding-bottom:150px; " data-record-type="431" ><!-- t431 --><!-- @classes: t-text t-title t-btn t-btn_sm --><div class="t431"><div class="t-container"><div class="t-col t-col_10 t-prefix_1 t431__tdscale_1 t-text t-text_sm t-align_left t431__withoutmobilescroll"><div class="t431__wrapper-for-mobile"><div class="t431__table-wrapper" data-auto-correct-mobile-width="false" ><table class="t431__table " data-table-width="70%;15%;15%" width="100%"></table></div></div><div class="t431__data-part1" data-auto-correct-mobile-width="false" style="display: none">Услуги;Отснятый Материал;Цена</div><div class="t431__data-part2" data-auto-correct-mobile-width="false" style="display: none">• На песке до 100м.
+С трубой диаметром 114 мм и включенным насосом.; за метр;От 1000лей.
+С трубой диаметром 125 и насос; за метр;От 1300лей.
+С трубой диаметром 140 и насос; за метр;От 1600лей.
+• На камне до 100м.
+С трубой диаметром 114 и насос; за метр;От 1000лей.
+С трубой диаметром 125 и насос; за метр;От 1100лей.
+С трубой диаметром 140 и насос; за метр;От 1200лей.</div></div></div></div><style>#rec724314187 .t431 .t431__th {
+border-width: 0px 0px 1px 0px;
+border-color: #00005d; color: #008000;}
+#rec724314187 .t431 .t431__tbody tr:nth-child(1) td {
+border-top: 0 !important;
+}
+#rec724314187 .t431 .t431__td {
+border-width: 1px 0px;
+vertical-align: top;
+border-color: #ced5d9; color: #000000;}
+#rec724314187 .t431 .t431__oddrow {
+background: #ffffff}
+#rec724314187 .t431 .t431__evenrow {
+background: #eff4f7}
+#rec724314187 .t431 .t431__btnwrapper a {
+color:#ffffff;border:0px solid #000000;background-color:#000000;border-radius:21px; -moz-border-radius:21px; -webkit-border-radius:21px;
+}</style><script>t_onReady(function () {
+t_onFuncLoad('t431_init', function () {
+t431_init(724314187);
+});
+});</script><style> #rec724314187 .t431 .t431__td { font-family: 'Orelega'; }</style></div><div id="rec724314188" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#f0f0f0; " data-record-type="255" data-bg-color="#f0f0f0"><!-- T225 --><div class="t225"><div class="t-container t-align_center"><div class="t-col t-col_8 t-prefix_2"><div class="t225__title t-title t-title_md" field="title"><div style="font-size: 42px;" data-customstyle="yes"><span style="color: rgb(0, 0, 93); font-family: Orelega;">Частые Вопросы</span></div></div> </div></div></div><style> #rec724314188 .t225__uptitle { text-transform: uppercase; }</style></div><div id="rec724314189" class="r t-rec t-rec_pt_15 t-rec_pb_30" style="padding-top:15px;padding-bottom:30px;background-color:#eeeeee; " data-animationappear="off" data-record-type="668" data-bg-color="#eeeeee"><!-- T668 --><div class="t668"><div class="t-container"><div class="t668__col t-col t-col_8 t-prefix_2" style="margin-bottom:2px;"><div class="t668__accordion" data-accordion="false" data-scroll-to-expanded="false"><div class="t668__wrapper" ><div class="t668__header "><button type="button" 
+class="t668__trigger-button" 
+aria-controls="accordion1_724314189" 
+aria-expanded="false"
+><span class="t668__title t-name t-name_xl" field="li_title__1480611044356" style="">Почему стоит выбрать скважины для воду?</span><span class="t668__icon" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: transparent;"></span></span><span class="t668__icon t668__icon-hover" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: #008000"></span></span></button></div><div class="t668__content" 
+id="accordion1_724314189"
+hidden ><div class="t668__textwrapper"><div class="t668__text t-descr t-descr_xs" field="li_descr__1480611044356" style=""><span style="font-family: Orelega;">Скважины для воды обеспечивают доступ к постоянному и чистому источнику питьевой воды, устраняя зависимость от поверхностных источников воды.</span></div></div></div></div></div></div><div class="t668__col t-col t-col_8 t-prefix_2" style="margin-bottom:2px;"><div class="t668__accordion" data-accordion="false" data-scroll-to-expanded="false"><div class="t668__wrapper" ><div class="t668__header "><button type="button" 
+class="t668__trigger-button" 
+aria-controls="accordion2_724314189" 
+aria-expanded="false"
+><span class="t668__title t-name t-name_xl" field="li_title__1480611048442" style="">Какие затраты и выгоды от водяные скважины?</span><span class="t668__icon" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: transparent;"></span></span><span class="t668__icon t668__icon-hover" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: #008000"></span></span></button></div><div class="t668__content" 
+id="accordion2_724314189"
+hidden ><div class="t668__textwrapper"><div class="t668__text t-descr t-descr_xs" field="li_descr__1480611048442" style="">Первоначальные затраты различаются, но скважины для воды обеспечивают долгосрочную экономию и бесперебойную подачу воды, сокращая счета и обеспечивая стабильную подачу питьевой воды.</div></div></div></div></div></div><div class="t668__col t-col t-col_8 t-prefix_2" style="margin-bottom:2px;"><div class="t668__accordion" data-accordion="false" data-scroll-to-expanded="false"><div class="t668__wrapper" ><div class="t668__header "><button type="button" 
+class="t668__trigger-button" 
+aria-controls="accordion3_724314189" 
+aria-expanded="false"
+><span class="t668__title t-name t-name_xl" field="li_title__1489600117321" style="">Почему стоит выбрать водяные скважины?</span><span class="t668__icon" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: transparent;"></span></span><span class="t668__icon t668__icon-hover" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: #008000"></span></span></button></div><div class="t668__content" 
+id="accordion3_724314189"
+hidden ><div class="t668__textwrapper"><div class="t668__text t-descr t-descr_xs" field="li_descr__1489600117321" style="">Скважины для воды обеспечивают постоянный и чистый источник питьевой воды, устраняя зависимость от поверхностных источников.</div></div></div></div></div></div><div class="t668__col t-col t-col_8 t-prefix_2" style="margin-bottom:2px;"><div class="t668__accordion" data-accordion="false" data-scroll-to-expanded="false"><div class="t668__wrapper" ><div class="t668__header "><button type="button" 
+class="t668__trigger-button" 
+aria-controls="accordion4_724314189" 
+aria-expanded="false"
+><span class="t668__title t-name t-name_xl" field="li_title__1508930778327" style="">Какие выгоды и преимущества предоставляет геотермальное отопление?</span><span class="t668__icon" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#222222"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: transparent;"></span></span><span class="t668__icon t668__icon-hover" ><span class="t668__lines"><svg role="presentation" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1px" fill="none" fill-rule="evenodd" stroke-linecap="square"><g transform="translate(1.000000, 1.000000)" stroke="#ffffff"><path d="M0,11 L22,11"></path><path d="M11,0 L11,22"></path></g></g></svg></span><span class="t668__circle" style="background-color: #008000"></span></span></button></div><div class="t668__content" 
+id="accordion4_724314189"
+hidden ><div class="t668__textwrapper"><div class="t668__text t-descr t-descr_xs" field="li_descr__1508930778327" style="">Геотермальное отопление обеспечивает значительную и устойчивую экономию, снижая затраты на электроэнергию и требования к техническому обслуживанию.</div></div></div></div></div></div></div></div><script>t_onReady(function () {
+t_onFuncLoad('t668_init', function () {
+t668_init('724314189');
+});
+});</script></div><div id="rec724314190" class="r t-rec" style=" " data-record-type="215" ><a name="form" style="font-size:0;"></a></div><div id="rec724314191" class="r t-rec t-rec_pt_60 t-rec_pb_60" style="padding-top:60px;padding-bottom:60px;background-color:#ffffff; " data-record-type="551" data-bg-color="#ffffff"><!-- t551--><div class="t551"><div class="t-container"><div class="t-col t-col_6 t-prefix_3 t-align_center"> <div class="t551__title t-name t-name_xs" field="title" data-animate-order="1"><div style="font-size: 42px;" data-customstyle="yes"><span style="font-family: Orelega; color: rgb(0, 0, 93);">Связаться с нами</span></div></div><div class="t551__contacts t-title t-title_xxs" field="text" data-animate-order="2" data-animate-delay="0.3"><a href="Tel:+(373)60121205" style="color: rgb(0, 0, 0);">+(373)60121205</a><span style="color: rgb(139, 69, 19);"> racovita1980@gmail.com</span></div><div class="t-sociallinks"><ul role="list" class="t-sociallinks__wrapper" aria-label="Social media links"><!-- new soclinks --><li class="t-sociallinks__item t-sociallinks__item_facebook"><a href="https://google.com" target="_blank" rel="nofollow" aria-label="facebook" style="width: 30px; height: 30px;"><svg class="t-sociallinks__svg" role="presentation" width=30px height=30px viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.6142 0 50-22.3858 50-50S77.6142 0 50 0 0 22.3858 0 50s22.3858 50 50 50Zm3.431-73.9854c-2.5161.0701-5.171.6758-7.0464 2.4577-1.5488 1.4326-2.329 3.5177-2.5044 5.602-.0534 1.4908-.0458 2.9855-.0382 4.4796.0058 1.1205.0115 2.2407-.0085 3.3587-.6888.005-1.3797.0036-2.0709.0021-.9218-.0019-1.8441-.0038-2.7626.0096 0 .8921.0013 1.7855.0026 2.6797.0026 1.791.0052 3.5853-.0026 5.3799.9185.0134 1.8409.0115 2.7627.0096.6912-.0015 1.382-.0029 2.0708.0021.0155 3.5565.0127 7.1128.0098 10.669-.0036 4.4452-.0072 8.8903.0252 13.3354 1.8903-.0134 3.7765-.0115 5.6633-.0095 1.4152.0014 2.8306.0028 4.2484-.0022.0117-4.0009.0088-7.9986.0058-11.9963-.0029-3.9979-.0058-7.9957.0059-11.9964.9533-.005 1.9067-.0036 2.86-.0021 1.2713.0019 2.5425.0038 3.8137-.0096.396-2.679.7335-5.3814.9198-8.0947-1.2576-.0058-2.5155-.0058-3.7734-.0058-1.2578 0-2.5157 0-3.7734-.0059 0-.4689-.0007-.9378-.0014-1.4066-.0022-1.4063-.0044-2.8123.0131-4.2188.198-1.0834 1.3158-1.9104 2.3992-1.8403h5.1476c.0117-2.8069.0117-5.602 0-8.4089-.6636 0-1.3273-.0007-1.9911-.0014-1.9915-.0022-3.9832-.0044-5.975.0131Z" fill="#288eba"/></svg></a></li><li class="t-sociallinks__item t-sociallinks__item_viber"><a href="viber://chat?number=%2B37360121205" target="_blank" rel="nofollow" aria-label="viber" style="width: 30px; height: 30px;"><svg class="t-sociallinks__svg" role="presentation" width=30px height=30px viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100c27.614 0 50-22.386 50-50S77.614 0 50 0 0 22.386 0 50s22.386 50 50 50Zm19.546-71.18c-1.304-1.184-6.932-4.72-18.674-4.772 0 0-13.905-.913-20.655 5.2-3.757 3.71-5.022 9.226-5.161 15.957l-.016.691c-.156 6.885-.433 19.013 11.47 22.32l-.053 10.386c0 .587.093.988.428 1.071.241.059.602-.066.91-.372 1.968-1.978 8.271-9.582 8.271-9.582 8.457.553 15.186-1.117 15.91-1.354.17-.054.415-.111.72-.183 2.752-.641 10.37-2.417 11.776-13.773 1.613-13.003-.594-21.88-4.926-25.589ZM48.664 31.51a.908.908 0 0 1 .914-.901c4.585.032 8.468 1.56 11.584 4.597 3.146 3.067 4.696 7.24 4.736 12.404a.908.908 0 1 1-1.815.013c-.037-4.79-1.461-8.458-4.188-11.117-2.757-2.688-6.18-4.053-10.33-4.082a.908.908 0 0 1-.9-.914Zm2.374 2.932a1.15 1.15 0 1 0-.168 2.294c2.918.213 5.067 1.184 6.597 2.854 1.541 1.684 2.304 3.784 2.248 6.389a1.15 1.15 0 0 0 2.3.05c.067-3.133-.87-5.826-2.851-7.992-2.01-2.193-4.758-3.349-8.126-3.595Zm1.156 4.454a.908.908 0 1 0-.095 1.812c1.335.07 2.223.458 2.8 1.054.58.6.964 1.535 1.033 2.936a.908.908 0 0 0 1.813-.09c-.083-1.677-.558-3.09-1.542-4.108-.987-1.021-2.368-1.519-4.009-1.604Zm1.805 15.633c-.594.732-1.698.64-1.698.64-8.066-2.06-10.224-10.23-10.224-10.23s-.097-1.104.638-1.698l1.458-1.158c.722-.557 1.183-1.908.448-3.228a34.125 34.125 0 0 0-1.839-2.881c-.641-.877-2.136-2.671-2.142-2.677-.72-.85-1.78-1.048-2.898-.466a.045.045 0 0 0-.012.003l-.011.003a12.062 12.062 0 0 0-2.986 2.432c-.69.833-1.085 1.65-1.185 2.45a1.57 1.57 0 0 0-.022.357c-.003.354.05.706.16 1.042l.038.026c.348 1.236 1.22 3.296 3.114 6.731a40.117 40.117 0 0 0 3.735 5.654c.703.89 1.456 1.74 2.256 2.543l.029.03.057.056.085.086.086.085.086.086a29.64 29.64 0 0 0 2.543 2.255 40.072 40.072 0 0 0 5.655 3.736c3.433 1.894 5.495 2.766 6.73 3.114l.026.038c.336.11.688.164 1.041.16.12.006.24-.001.358-.022.802-.095 1.618-.49 2.448-1.184a.032.032 0 0 0 .007-.004.101.101 0 0 0 .003-.004l.012-.008a12.09 12.09 0 0 0 2.41-2.97l.003-.01a.054.054 0 0 0 .002-.013c.583-1.117.385-2.177-.47-2.899l-.189-.154c-.484-.4-1.783-1.47-2.487-1.988a34.12 34.12 0 0 0-2.879-1.838c-1.32-.736-2.669-.275-3.228.448L54 54.528Z" fill="#288eba"/></svg></a></li><!-- /new soclinks --></ul></div></div></div></div></div></div><!--/allrecords-->

@@ -1,0 +1,50 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page45495993.html
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^servicii$ page45737953.html [NC]
+RewriteRule ^servicii/$ page45737953.html [NC]
+
+RewriteRule ^galerie$ page45687357.html [NC]
+RewriteRule ^galerie/$ page45687357.html [NC]
+
+RewriteRule ^contacte$ page45741827.html [NC]
+RewriteRule ^contacte/$ page45741827.html [NC]
+
+RewriteRule ^desprenoi$ page45750969.html [NC]
+RewriteRule ^desprenoi/$ page45750969.html [NC]
+
+RewriteRule ^plusuri$ page45745737.html [NC]
+RewriteRule ^plusuri/$ page45745737.html [NC]
+
+RewriteRule ^plusurig$ page45754697.html [NC]
+RewriteRule ^plusurig/$ page45754697.html [NC]
+
+RewriteRule ^principal/ru$ page45949757.html [NC]
+RewriteRule ^principal/ru/$ page45949757.html [NC]
+
+RewriteRule ^servicii/ru$ page45949759.html [NC]
+RewriteRule ^servicii/ru/$ page45949759.html [NC]
+
+RewriteRule ^galerie/ru$ page45949761.html [NC]
+RewriteRule ^galerie/ru/$ page45949761.html [NC]
+
+RewriteRule ^contacte/ru$ page45949765.html [NC]
+RewriteRule ^contacte/ru/$ page45949765.html [NC]
+
+RewriteRule ^desprenoi/ru$ page45949769.html [NC]
+RewriteRule ^desprenoi/ru/$ page45949769.html [NC]
+
+RewriteRule ^plusurisond/ru$ page45949775.html [NC]
+RewriteRule ^plusurisond/ru/$ page45949775.html [NC]
+
+RewriteRule ^plusuriincalz/ru$ page45949777.html [NC]
+RewriteRule ^plusuriincalz/ru/$ page45949777.html [NC]
+
+
