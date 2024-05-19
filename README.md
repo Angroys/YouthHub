@@ -1,6 +1,6 @@
-# Youth Empowerment Platform 🚀
+# Youth Hub, the all-in-one platform for volunteering and erasmus+🚀
 
-Welcome to our Youth Empowerment Platform repository! This platform is designed to empower youth by connecting them with opportunities and resources to shape their future. Whether you're a young individual looking for volunteering opportunities, educational programs like Erasmus+, or a supportive community to grow with, our platform has something for you.
+Welcome to our Youth Hub repository! This platform is designed to empower youth by connecting them with opportunities and resources to shape their future. Whether you're a young individual looking for volunteering opportunities, educational programs like Erasmus+, or a supportive community to grow with, our platform has something for you.
 
 ## Features
 
