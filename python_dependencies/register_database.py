@@ -66,8 +66,7 @@ class LoginForm(FlaskForm):
 
 @app.route("/")
 def home():
-
-    return render_template('home.html')
+    return render_template('main.html')
 
 
 @app.route("/login",  methods=['GET', 'POST'])
@@ -101,9 +100,13 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-@app.route('/static')
-def serve_static(filename):
-    return send_from_directory(app.static_folder, filename)
+@app.route('/css/<path:filename>')
+def serve_css(filename):
+    return send_from_directory('static/css', filename)
+
+@app.route('/images/<path:filename>')
+def serve_images(filename):
+    return send_from_directory('static/images', filename)
 
 
 if __name__ == "__main__":
