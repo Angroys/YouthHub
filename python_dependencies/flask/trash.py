@@ -1,12 +1,13 @@
 from flask import Flask, render_template, url_for, redirect
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import  login_user, LoginManager, login_required, logout_user, current_user
 from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm, csrf
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, EmailField, DateField
-from wtforms.validators import InputRequired, Length, ValidationError
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import InputRequired
 from flask_bcrypt import Bcrypt
 from flask import send_from_directory
-from youthhubuser import User
+from user import User
+
 
 
 
@@ -33,28 +34,6 @@ def load_user(user_id):
 
 
 
-class RegisterForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(
-        min=4, max=20)], render_kw={"placeholder": "Username"})
-    password = PasswordField(validators=[InputRequired(), Length(
-        min=8, max=100)], render_kw={"placeholder": "Passowrd"})
-    email = EmailField(validators=[InputRequired(), Length(
-        min=4, max=150)], render_kw={"placeholder": "Email"})
-    birthday = DateField(validators=[InputRequired()], render_kw={
-                         "placeholder": "Birthday"})
-
-    submit = SubmitField("Register")
-
-    def validate_username(self, username):
-        existing_username = User.query.filter_by(
-            username=username.data).first()
-        if existing_username:
-            raise ValidationError('The username already exists')
-
-    def validate_email(self, email):
-        existing_email = User.query.filter_by(email=email.data).first()
-        if existing_email:
-            raise ValidationError('The email already exists')
 
 
 class LoginForm(FlaskForm):

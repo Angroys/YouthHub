@@ -3,35 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>CodePen - CSS-Only Floating Labels</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  <link rel="icon" href="{{url_for('static', filename='images/favicon.svg')}}">
+
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <body>
-  <h1>CSS-Only Floating Labels</h1>
-  <div class="container">
-    <div class="cta-form">
-      <h2>Fill out the form!</h2> 
-    <p>Check out the comments for line by line explanations. Form-related code starts on line 145.</p>
     </div>
-    <form action="" class="form">
-      
-      <input type="text" placeholder="Name" class="form__input" id="name" />
-      <label form="name" class="form__label">
-
-      <input type="email" placeholder="Email" class="form__input" id="email" />
-      <label form="email" class="form__label">
-
-      <input type="text" placeholder="Subject" class="form__input" id="subject" />
-      <label form="subject" class="form__label">
-
-      <input type="" placeholder="Subject" class="form__input" id="subject" />
-      <label form="subject" class="form__label">
-
-
-      
+    <form action="{{ url_for('routes.register') }}" method="POST" class="form">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.username.label(class="form__label") }}
+        {{ form.username(class="form__input", id="username") }}
+        {% for error in form.username.errors %}
+          <span class="error">{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.password.label(class="form__label") }}
+        {{ form.password(class="form__input", id="password") }}
+        {% for error in form.password.errors %}
+          <span class="error">{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.email.label(class="form__label") }}
+        {{ form.email(class="form__input", id="email") }}
+        {% for error in form.email.errors %}
+          <span class="error">{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.birthday.label(class="form__label") }}
+        {{ form.birthday(class="form__input", id="birthday") }}
+        {% for error in form.birthday.errors %}
+          <span class="error">{{ error }}</span>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.submit(class="form__input", id="submit") }}
+      </div>
+      <div class="a_text">
+        <a href="{{ url_for('routes.login') }}">Have an account? Login here</a><br>
+        <a href="{{ url_for('routes.home') }}">Main Page</a><br>
+        </div>
     </form>
-  </div>
+
 </body>
 </html>

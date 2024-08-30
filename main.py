@@ -1,58 +1,37 @@
-import re, io, requests, os, hashlib, asyncio, time
-from PIL import Image
+import asyncio, os, sys, logging
+
+sys.path.append(os.path.abspath(os.path.dirname('python_dependencies\groq_api.py')))
+
+from jinja2 import Environment, FileSystemLoader
 from python_dependencies.telegram_api_code import TelegramClass
 from python_dependencies.groq_api import GroqAPI
-from pathlib import Path
-from jinja2 import Environment, FileSystemLoader
 
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-donwload_path = 'download/'
-grok_api_key = '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'
+# Configuration
+grok_api_key = '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'
 api_id = 23396138
 api_hash = '870bf37c60ef75fec3802a87c7e69937'
-telegram_client = TelegramClass(api_id, api_hash, donwload_path)
-ai_summarizer = GroqAPI(grok_api_key)
+download_path = 'download/'
 
-def extractImageFromArticle(url:str):
-    image_content = requests.get(url[0]).content
-    image_file = io.BytesIO(image_content)
-    image = Image.open(image_file)
-    return image
-    
-    
-async def get_a_Summarizer_and_the_Image():
-    link =  await telegram_client.run_code()
-    if link:
-        title = ai_summarizer.write_a_article_title(link)
-        summary_of_the_news = ai_summarizer.get_summary_of_the_news(link)
-        makeHTMLfile(title, summary_of_the_news, link)
-    else:
-        print("No URL found in the message.")
+telegram_client = TelegramClass(api_id, api_hash, download_path, grok_api_key)
 
-def makeHTMLfile(title, text, link):
-    
-    env = Environment(loader=FileSystemLoader('templates'))  
+async def run_bot():
+    try:
+        await telegram_client.connect()
+        logger.info("Bot is running and listening for messages...")
+        await telegram_client.client.run_until_disconnected()  # Run the client
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
+    finally:
+        await telegram_client.disconnect()
 
-    template = env.get_template('article_template.html')
-
-
-    article_data = {
-        'article_title': title,
-        'article_date': time.time(),
-        'article_image': 'download\image.png',
-        'paragraph_1': text
-        
-    }
-
-    rendered_template = template.render(article_data)
-
-    
-    output_folder = 'articles'
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-
-    output_file_path = os.path.join(output_folder, 'new_article.html')
-    with open(output_file_path, 'w', encoding='utf-8') as f:
-        f.write(rendered_template)
-
-asyncio.run(get_a_Summarizer_and_the_Image())
+if __name__ == "__main__":
+    try:
+        asyncio.run(run_bot())
+    except asyncio.CancelledError:
+        logger.error("The main task was cancelled.")
+    except Exception as e:
+        logger.error(f"An error occurred in the main execution: {e}")   

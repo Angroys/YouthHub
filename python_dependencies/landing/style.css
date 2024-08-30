@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4; /* Optional: Background color for contrast */
+}
+
+
+.rectangle {
+    margin: 16px;
+    display: flex;
+    align-items: center;
+    width: 80vw;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rectangle img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.rectangle .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.rectangle .text-content .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rectangle .text-content .subtitle {
+    font-size: 14px;
+    color: #666;
+}

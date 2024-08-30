@@ -1,61 +1,93 @@
 import asyncio
+import logging
 from telethon import TelegramClient, events
-import os, re, telethon, telethon.client
 from telethon.tl import types
-
+from groq_api import GroqAPI
 
 class TelegramClass:
-
-
-
-    def __init__(self, api_id, api_hash, path) -> None:
+    def __init__(self, api_id, api_hash, path, groq_api_key):
         self.api_id = api_id
         self.api_hash = api_hash
         self.path = path
-        self.client = TelegramClient('anon', api_id, api_hash)
-        self.url = None  # To store the URL found in the message
-        self.event_processed = asyncio.Event()  # Event to signal message processing is done
-        self.client.add_event_handler(self.my_event_handler, events.NewMessage(incoming=True, outgoing=True))
+        self.client = TelegramClient('anon', api_id, api_hash, timeout=30)
+        self.event_processed = asyncio.Event()
+        self.message_text = None
+        self.groq_client = GroqAPI(groq_api_key)
+        self.client.add_event_handler(self.my_event_handler, events.NewMessage())
         self.organizations = [
-    "Centrul Municipal de Tineret Chișinău",
-    "Oportunități",
-    "TECHNOVATOR",
-    "SIGMOID",
-    "antreprenor.md",
-    "Clubul Ingineresc Micro Lab",
-    "Asociația Internațională a Tinerilor ✨",
-    "Oportunități PNTP",
-    "Startup Moldova",
-    "YouthHub"
-    ]        
-            
+    "1452970035",
+    "1190874605",
+    "1704244304",
+    "2018595248",
+    "1640771696",
+    "1572721193",
+    "1458904601",
+    "1209366368",
+    "1918262723",
+    "1445720900",
+    "1276209494",
+    "2060715853",
+    "1727255311",
+    "1695314357",
+    "1155841239",
+    "2102711645",
+    "1632951890",
+    "1718986183",
+    "5522937027",
+    "2209469557",
+    "1718986183",
+    "1155841239"
+]
+
+
+        # Initialize logger
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.DEBUG)
+
+    async def connect(self):
+        try:
+            await self.client.start()
+            self.logger.info("Connected to Telegram.")
+        except Exception as e:
+            self.logger.error(f"Failed to connect to Telegram: {e}")
+            raise
+
+    async def disconnect(self):
+        try:
+            await self.client.disconnect()
+            self.logger.info("Disconnected from Telegram.")
+        except Exception as e:
+            self.logger.error(f"Failed to disconnect from Telegram: {e}")
+
     async def my_event_handler(self, event):
-        self.chat = await event.get_chat()
-        if isinstance(self.chat, types.Chat) or isinstance(self.chat, types.Channel): 
-            for titlu in self.organizations:
-                if titlu == self.chat.title:
-                    self.message_text = event.message.message
-                    self.photo = event.photo
-                    print(self.message_text)
-                    self.url = self.FindURLinTelegramMessage(self.message_text)
-                    self.check_if_Folder_exists(self.path)
-                    await self.download_media(event, self.path)
-                    self.event_processed.set()  
-                    await self.client.disconnect() 
+        try:
+            self.logger.info("New message event detected.")
+            self.chat = await event.get_chat()
+            chat_id_str = str(self.chat.id)
 
-    async def download_media(self, event, path: str):
-        await event.message.download_media(path)    
+            if isinstance(self.chat, (types.Chat, types.Channel)) and chat_id_str in str(self.organizations):   
+                self.logger.info("It worked")
+                self.message_text = event.message.message
+                self.logger.info(f"Message processed: {self.message_text}")
 
-    def check_if_Folder_exists(self, download_folder: str):
-        if not os.path.exists(download_folder):
-            os.makedirs(download_folder)         
-    
-    def FindURLinTelegramMessage(self, message: str):
-        regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
-        url = re.findall(regex, message)
-        return url[0] if url else None
-    
-    async def run_code(self):
-        await self.client.start()
-        await self.event_processed.wait()  
-        return self.url 
+                if(self.groq_client.messageIsAnOpportunity(self.message_text) == 'True'):
+                    self.logger.info("Yes, it does")
+                    await self.send_mess(self.groq_client.get_summary_of_the_news(self.message_text))
+                self.event_processed.set()
+        except Exception as e:
+            self.logger.error(f"Error in event handler: {e}")
+            self.event_processed.set()  # Avoid deadlock in case of errors
+
+    async def send_mess(self, message, chat_id="youthubmdtest", max_retries=3):
+        for attempt in range(max_retries):
+            try:
+                await self.client.send_message(entity=chat_id, message=message)
+                self.logger.info("Message sent successfully.")
+                return
+            except asyncio.CancelledError:
+                self.logger.warning("Message sending was cancelled.")
+                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+            except Exception as e:
+                self.logger.error(f"Failed to send message (attempt {attempt + 1}): {e}")
+                if attempt + 1 == max_retries:
+                    raise

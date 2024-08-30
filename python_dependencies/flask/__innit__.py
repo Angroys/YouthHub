@@ -2,22 +2,31 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-from youthhubuser import User
-from routes import routes
+from user import User, userdb, bcrypt
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
-app.config['SECRET_KEY'] = 'your_secret_key'
+login_manager = LoginManager()
 
-userdb = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
+def create_app():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+    app.config['SECRET_KEY'] = 'your_secret_key'
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+    # Initialize extensions with the app
+    userdb.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
 
-# Register Blueprints
-app.register_blueprint(routes)
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
-# Import models to ensure they are registered with SQLAlchemy
+    # Register Blueprints
+    from routes import routes
+    app.register_blueprint(routes)
+
+    with app.app_context():
+        userdb.create_all()
+
+    return app
+
+
