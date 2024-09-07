@@ -22,7 +22,7 @@ groq_client = GroqAPI(grok_api_key)
 
 # List of organizations (chat IDs or usernames)
 organizations = [
-    "portalcivic"
+    "sigm_"
 
 
 

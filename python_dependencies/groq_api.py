@@ -64,4 +64,56 @@ class GroqAPI():
 
         return result
 
+    def messageIsAListoFnEWS(self, telegram_message: str):
+        if self.is_similar_message(telegram_message):
+            return "False"
+
+        chat_completion = self.client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": """You will receive a message from telegram below. You don't have to comment. 
+                    You just have to say 'True' or 'False' if it contains some news about AI{}""".format(telegram_message) ,
+                }
+            ],
+            model="llama-3.1-70b-versatile"
+        )
+
+        result = chat_completion.choices[0].message.content
+        print(result)
+
+        # Add the message to the cache if it's a new opportunity
+        if result.strip().lower() == 'true':
+            self.message_cache.append(telegram_message)
+
+        return result
+
+    def customMessage(self, text, otherInput):
+        chat_completion = []
+        if otherInput:
+            chat_completion = self.client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": "{}{}".format(text, otherInput) ,
+                }
+            ],
+            model="llama-3.1-70b-versatile"
+        )
+        else:
+            chat_completion = self.client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": "{}".format(text) ,
+                }
+            ],
+            model="llama-3.1-70b-versatile"
+            )
+             
+        
+        result = chat_completion.choices[0].message.content
+        return result
+            
+
 # API KEY = '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'
