@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration
-grok_api_key = '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'
-api_id = 23396138
-api_hash = '870bf37c60ef75fec3802a87c7e69937'
+grok_api_key = ''
+api_id = 
+api_hash = ''
 download_path = 'download/'
 
 # Initialize Telegram and Groq clients
@@ -22,13 +22,13 @@ groq_client = GroqAPI(grok_api_key)
 
 # List of organizations (chat IDs or usernames)
 organizations = [
-    "sigm_"
+    "sigmo_ai"
 
 
 
 ]
 
-async def fetch_past_messages(chat_id, limit=3):
+async def fetch_past_messages(chat_id, limit=100):
     messages = []
     try:
         # Fetch past messages from the chat

@@ -20,7 +20,7 @@ api_id = 23396138
 api_hash = '870bf37c60ef75fec3802a87c7e69937'
 download_path = 'download/'
 telegram_channel = 'sigmo_ai'  # The name of the Telegram channel
-limit = 100  # Number of past messages to fetch (increase this if necessary)
+limit = 1000  # Number of past messages to fetch (increase this if necessary)
 
 # Define the date range (start and end date for fetching messages)
 start_date = utc.localize(datetime(2024, 8, 6))  # Start date (YYYY, MM, DD)
