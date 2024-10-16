@@ -73,7 +73,7 @@ class GroqAPI():
                 {
                     "role": "user",
                     "content": """You will receive a message from telegram below. You don't have to comment. 
-                    You just have to say 'True' or 'False' if it contains some news about AI{}""".format(telegram_message) ,
+                    You just have to say 'True' {}""".format(telegram_message) , #I've removed this part or 'False' if it contains some news
                 }
             ],
             model="llama-3.1-70b-versatile"

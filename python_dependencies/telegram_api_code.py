@@ -14,30 +14,7 @@ class TelegramClass:
         self.message_text = None
         self.groq_client = GroqAPI(groq_api_key)
         self.client.add_event_handler(self.my_event_handler, events.NewMessage())
-        self.organizations = [
-    "1452970035",
-    "1190874605",
-    "1704244304",
-    "2018595248",
-    "1640771696",
-    "1572721193",
-    "1458904601",
-    "1209366368",
-    "1918262723",
-    "1445720900",
-    "1276209494",
-    "2060715853",
-    "1727255311",
-    "1695314357",
-    "1155841239",
-    "2102711645",
-    "1632951890",
-    "1718986183",
-    "5522937027",
-    "2209469557",
-    "1718986183",
-    "1155841239"
-]
+        self.organizations = []
 
 
         # Initialize logger

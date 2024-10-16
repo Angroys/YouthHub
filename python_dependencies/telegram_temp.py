@@ -14,19 +14,7 @@ class TelegramClass:
         self.message_text = None
         self.groq_client = GroqAPI(groq_api_key)
         self.client.add_event_handler(self.my_event_handler, events.NewMessage(incoming=True, outgoing=True))
-        self.organizations = [
-            "centrutineretchisinau",
-            "oportunitatidiez",
-            "technovator_world",
-            "sigmo_ai",
-            "antreprenor.md",
-            "ctmakeri",
-            "microlabclub",
-            "Asociația Internațională a Tinerilor ✨",
-            "OportunitatiPNTP",
-            "StartupMoldova",
-            "Volunteer4_VIP"
-        ]
+        self.organizations = []
 
         # Initialize logger
         self.logger = logging.getLogger(__name__)

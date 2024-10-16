@@ -15,16 +15,16 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration
-grok_api_key = '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'
-api_id = 23396138
-api_hash = '870bf37c60ef75fec3802a87c7e69937'
+grok_api_key = ''
+api_id = 
+api_hash = ''
 download_path = 'download/'
-telegram_channel = 'sigmo_ai'  # The name of the Telegram channel
+telegram_channel = ''  # The name of the Telegram channel
 limit = 1000  # Number of past messages to fetch (increase this if necessary)
 
 # Define the date range (start and end date for fetching messages)
-start_date = utc.localize(datetime(2024, 8, 6))  # Start date (YYYY, MM, DD)
-end_date = utc.localize(datetime(2024, 9, 6))  # End date (YYYY, MM, DD)
+start_date = utc.localize(datetime(2024, 1, 1))  # Start date (YYYY, MM, DD)
+end_date = utc.localize(datetime(2024, 12, 30))  # End date (YYYY, MM, DD)
 
 # Initialize Telegram and Groq clients
 telegram_client = TelegramClass(api_id, api_hash, download_path, groq_api_key=grok_api_key)

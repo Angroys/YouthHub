@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuration
-grok_api_key = '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'
-api_id = 23396138
-api_hash = '870bf37c60ef75fec3802a87c7e69937'
+grok_api_key = ''
+api_id = 
+api_hash = ''
 download_path = 'download/'
 
 telegram_client = TelegramClass(api_id, api_hash, download_path, grok_api_key)

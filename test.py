@@ -2,8 +2,8 @@ import asyncio
 from telethon import TelegramClient, events
 
 # Your Telegram API credentials
-api_id = 23396138
-api_hash = '870bf37c60ef75fec3802a87c7e69937'
+api_id = 
+api_hash = ''
 
 # Chat IDs or usernames
 source_chat_id = 'youthubmd'  # The chat from which you want to forward messages

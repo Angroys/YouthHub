@@ -2,8 +2,8 @@ import asyncio
 from telethon import TelegramClient
 
 # Your Telegram API credentials
-api_id = 23396138
-api_hash = '870bf37c60ef75fec3802a87c7e69937'
+api_id = 
+api_hash = ''
 
 # List of usernames for which you want to extract chat_ids
 username = input("Write the channel name:")
